@@ -1,0 +1,60 @@
+{
+  "name": "@chargerwallet/inpage-providers-hub",
+  "version": "3.0.0",
+  "keywords": [
+    "inpage-providers-hub"
+  ],
+  "author": "dev@chargerwallet.com",
+  "repository": "https://github.com/chargerwallet/inpage-providers-hub",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "files": [
+    "dist/*"
+  ],
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/cjs/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.js",
+  "main": "./dist/cjs/index.js",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsc && tsc --project tsconfig.cjs.json",
+    "test": "npx playwright test",
+    "test:report": "npx playwright show-report reports",
+    "start": "tsc --watch"
+  },
+  "dependencies": {
+    "@chargerwallet/cross-inpage-provider-core": "4.0.0",
+    "@chargerwallet/cross-inpage-provider-types": "4.0.0",
+    "@chargerwallet/chargerwallet-algo-provider": "4.0.0",
+    "@chargerwallet/chargerwallet-alph-provider": "4.0.0",
+    "@chargerwallet/chargerwallet-aptos-provider": "4.0.0",
+    "@chargerwallet/chargerwallet-btc-provider": "4.0.0",
+    "@chargerwallet/chargerwallet-cardano-provider": "4.0.0",
+    "@chargerwallet/chargerwallet-conflux-provider": "4.0.0",
+    "@chargerwallet/chargerwallet-cosmos-provider": "4.0.0",
+    "@chargerwallet/chargerwallet-eth-provider": "4.0.0",
+    "@chargerwallet/chargerwallet-nostr-provider": "4.0.0",
+    "@chargerwallet/chargerwallet-polkadot-provider": "4.0.0",
+    "@chargerwallet/chargerwallet-private-external-account-provider": "4.0.0",
+    "@chargerwallet/chargerwallet-private-provider": "4.0.0",
+    "@chargerwallet/chargerwallet-scdo-provider": "4.0.0",
+    "@chargerwallet/chargerwallet-solana-provider": "4.0.0",
+    "@chargerwallet/chargerwallet-sui-provider": "4.0.0",
+    "@chargerwallet/chargerwallet-ton-provider": "4.0.0",
+    "@chargerwallet/chargerwallet-tron-provider": "4.0.0",
+    "@chargerwallet/chargerwallet-webln-provider": "4.0.0",
+    "web3": "^1.7.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.43.1",
+    "@types/node": "^20.12.7",
+    "playwright": "^1.43.1"
+  }
+}

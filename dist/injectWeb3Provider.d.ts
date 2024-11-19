@@ -1,0 +1,53 @@
+import { JsBridgeBase } from '@chargerwallet/cross-inpage-provider-core';
+import { ProviderEthereum } from '@chargerwallet/chargerwallet-eth-provider';
+import { ProviderPrivate } from '@chargerwallet/chargerwallet-private-provider';
+import { ProviderSolana } from '@chargerwallet/chargerwallet-solana-provider';
+import { ProviderAptos, ProviderAptosMartian } from '@chargerwallet/chargerwallet-aptos-provider';
+import { ProviderAlph } from '@chargerwallet/chargerwallet-alph-provider';
+import { ProviderCardano } from '@chargerwallet/chargerwallet-cardano-provider';
+import { ProviderCosmos } from '@chargerwallet/chargerwallet-cosmos-provider';
+import { ProviderSui } from '@chargerwallet/chargerwallet-sui-provider';
+import { ProviderWebln } from '@chargerwallet/chargerwallet-webln-provider';
+import { ProviderScdo } from '@chargerwallet/chargerwallet-scdo-provider';
+import { ProviderTon } from '@chargerwallet/chargerwallet-ton-provider';
+import { ProviderNostr } from '@chargerwallet/chargerwallet-nostr-provider';
+import { ProviderBtc, ProviderBtcWallet } from '@chargerwallet/chargerwallet-btc-provider';
+export type IWindowChargerWalletHub = {
+    debugLogger?: any;
+    jsBridge?: JsBridgeBase;
+    ethereum?: ProviderEthereum;
+    solana?: ProviderSolana;
+    phantom?: {
+        solana?: ProviderSolana;
+    };
+    aptos?: ProviderAptos;
+    petra?: ProviderAptos;
+    martian?: ProviderAptosMartian;
+    suiWallet?: ProviderSui;
+    cardano?: ProviderCardano;
+    keplr?: ProviderCosmos;
+    webln?: ProviderWebln;
+    nostr?: ProviderNostr;
+    ton?: ProviderTon;
+    unisat?: ProviderBtc;
+    btcwallet?: ProviderBtcWallet;
+    alephium?: ProviderAlph;
+    scdo?: ProviderScdo;
+    $private?: ProviderPrivate;
+    $walletInfo?: {
+        buildNumber: string;
+        disableExt?: boolean;
+        isLegacy: boolean;
+        isDefaultWallet?: boolean;
+        excludedDappList: string[];
+        platform: string;
+        version: string;
+        platformEnv: {
+            isExtension: boolean;
+            isDesktop: boolean;
+            isNative: boolean;
+        };
+    };
+};
+declare function injectWeb3Provider(): unknown;
+export { injectWeb3Provider };
